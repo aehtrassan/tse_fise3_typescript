@@ -6,15 +6,23 @@ export default class Pilote {
     nationality: string;
     experience: number;
     car: Car;
+    points: number = 0;
 
 
-    constructor(name: string, birthYear: number, nationality: string, experience: number, car: Car) {
+    constructor(name: string, birthYear: number, nationality: string, experience: number, car: Car, points: number) {
         this.name = name;
         this.birthYear = birthYear;
         this.nationality = nationality
         this.experience = experience;
         this.car = car;
+        if (points) {
+            this.points = points;
+        }
     }
+    public setPoints(points: number): void {
+        this.points = points;
+    }
+    
     public display(): void {
         console.log(this.toString());
     }
